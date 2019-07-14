@@ -1,4 +1,5 @@
 # sublime-backup
+[![PyPI version](https://badge.fury.io/py/sublime-backup.svg)](https://badge.fury.io/py/sublime-backup)
 ----
 ## About
 > A simple command line tool to backup / sync your sublime snippets
