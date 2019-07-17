@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='sublime-backup',
-    version='0.2',
+    version='0.3',
     py_modules=['cli'],
     author = 'nishantwrp',
     author_email = 'mittalnishant14@outlook.com',
