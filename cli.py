@@ -168,7 +168,20 @@ def cli(action):
         return
     if (action == 'update'):
         # Delete The Previous Snippets
+        print("Getting Previous Backup")
+        url = 'https://sublime-backup.herokuapp.com/snippets/'
+        headers = {'Authorization': 'Token ' + auth_token}
+        r = requests.get(url=url,headers=headers)
         print("Removing Previous Backup")
+        account_id = ''
+        token = ''
+        for obj in r.json():
+            obj_url = "https://api.kloudless.com/v1/accounts/" + account_id + "/storage/files/" + obj['dropbox_id'] + "/?permanent=true"
+            obj_headers = {
+            'Authorization' : "Bearer " + token
+            }
+            obj_r = requests.delete(url=obj_url,headers=obj_headers)
+        print("Almost There")
         url = 'https://sublime-backup.herokuapp.com/snippets/delete/'
         headers = {'Authorization': 'Token ' + auth_token}
         r = requests.get(url=url,headers=headers)
